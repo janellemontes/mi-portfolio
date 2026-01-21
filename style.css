@@ -106,73 +106,69 @@ header {
     line-height: 1.6;
 }
 
-/* ================= TABLET BREAKPOINT ================= */
-@media (max-width: 900px) {
-    html {
-        font-size: 58%;
-    }
-
-    section {
-        padding: 9rem 6% 4rem;
-    }
+/* ================= MOBILE HOME FIX ================= */
+@media (max-width: 768px) {
 
     .home {
-        gap: 4rem;
+        min-height: 100vh;
+        padding: 10rem 6% 4rem;
+        gap: 3.5rem;
     }
 
-    .home-content h1 {
-        font-size: 4.6rem;
-    }
-
-    .typing-text {
-        font-size: 2.6rem;
-    }
-}
-
-/* ================= MOBILE BREAKPOINT ================= */
-@media (max-width: 600px) {
-    html {
-        font-size: 56%;
-    }
-
-    header {
-        padding: 1.6rem 6%;
-    }
-
-    .logo {
-        font-size: 2.4rem;
-    }
-
-    .home {
+    .home-content {
+        max-width: 100%;
         text-align: center;
     }
 
+    /* Fix large heading */
     .home-content h1 {
         font-size: 3.4rem;
+        line-height: 1.25;
     }
 
+    /* Fix typing overflow issue */
     .typing-text {
         font-size: 2.2rem;
+        white-space: normal;   /* ✅ IMPORTANT FIX */
+        overflow: visible;
     }
 
+    .typing-text span::after {
+        right: -6px;
+        height: 2.2rem;
+    }
+
+    /* Improve paragraph readability */
     .home-content p {
-        font-size: 1.6rem;
+        font-size: 1.55rem;
+        line-height: 1.7;
+        padding: 0 0.5rem;
     }
 
+    /* Profile image scaling */
     .home-img {
-        width: 24rem;
-        height: 24rem;
+        width: 26rem;
+        height: 26rem;
     }
 
-    .dl-cv {
-        width: 100%;
-        max-width: 26rem;
-        text-align: center;
+    /* Social + CV spacing */
+    .social-cv {
+        margin-top: 2.2rem;
+        gap: 2rem;
     }
 }
 
-/* ================= SMALL MOBILE ================= */
+/* ================= EXTRA SMALL DEVICES ================= */
 @media (max-width: 420px) {
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .typing-text {
+        font-size: 2rem;
+    }
+
     .home-img {
         width: 22rem;
         height: 22rem;
@@ -182,8 +178,10 @@ header {
         gap: 1.2rem;
     }
 
-    .section-title {
-        font-size: 3.4rem;
+    .dl-cv {
+        width: 100%;
+        max-width: 22rem;
+        text-align: center;
     }
 }
 
@@ -294,211 +292,6 @@ nav a:hover,
 nav a.active{
     color: #6B91AE;
     border-bottom: 3px solid #DFB6DC;
-}
-
-/* ================= SECTION ================= */
-section{
-    min-height: 100vh;
-    padding: 10rem 9% 5rem;
-}
-
-/* ================= HOME ================= */
-.home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6rem;
-}
-
-.home-content{
-    max-width: 55rem;
-}
-
-.home-content h1{
-    font-size: 6rem;
-    line-height: 1.2;
-}
-
-span{
-    color: #DFB6DC;
-}
-
-/* ================= TYPING TEXT ================= */
-.typing-text{
-    font-size: 3.4rem;
-    font-weight: 600;
-    margin: 1rem 0;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.typing-text span{
-    position: relative;
-    padding-left: .6rem;
-}
-
-.typing-text span::before{
-    content: "UX/UI Designer";
-    color: #DFB6DC;
-    animation: words 8s infinite;
-}
-
-.typing-text span::after{
-    content: "";
-    position: absolute;
-    right: -8px;
-    width: 2px;
-    height: 100%;
-    background: #DFB6DC;
-    animation: cursor 0.7s infinite;
-}
-
-@keyframes words{
-    0%, 50%{
-        content: "UX/UI Designer";
-    }
-    51%, 100%{
-        content: "Web Developer";
-    }
-}
-
-@keyframes cursor{
-    0%, 50%{ opacity: 1; }
-    51%, 100%{ opacity: 0; }
-}
-
-.home-content p{
-    font-size: 1.8rem;
-    margin: 1.6rem 0 2.4rem;
-    line-height: 1.7;
-}
-
-/* ================= PROFILE IMAGE ================= */
-.home-img{
-    position: relative;
-    width: 32vw;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
-
-    background: #DFB6DC;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 0 30px #6B91AE;
-}
-
-.home-img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-
-    transition: transform 0.3s ease, 
-                box-shadow 0.3s ease;
-}
-
-.home-img img:hover{ 
-    font-size: 1.8rem; 
-    font-weight: 500; 
-    transform: scale(1.05); 
-    box-shadow: 0 0 40px #DFB6DC; 
-}
-
-/* ================= SOCIAL ICONS ================= */ 
-.social-icons{
-    display: flex;
-    gap: 1.6rem;
-    margin-bottom: 2.8rem;
-    flex-wrap: wrap;       /* allows wrapping on smaller screens */
-    justify-content: center; /* center icons on small screens */
-}
-
-.social-icons a{
-    width: 4.4rem;
-    height: 4.4rem;
-    border-radius: 50%;
-    border: 2px solid #DFB6DC;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #DFB6DC;
-    font-size: 1.9rem;
-    transition: 0.3s ease;
-    text-decoration: none;
-}
-
-.social-icons a:hover{
-    background: #DFB6DC;
-    color: rgb(3, 3, 24);
-    box-shadow: 0 0 18px #DFB6DC;
-}
-
-.social-cv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-/* ================= BUTTON ================= */
-.dl-cv {
-    display: inline-block;
-    padding: 1.1rem 3.4rem;
-    font-size: 1.7rem;
-    font-weight: 600;
-    border-radius: 3rem;
-    background: #DFB6DC;
-    color: rgb(3, 3, 24);
-    transition: 0.3s ease;
-    text-decoration: none;
-    margin-top: 2rem; 
-}
-
-
-.dl-cv:hover{
-    background: #6B91AE;
-    color: #ffffff;
-    transform: scale(1.05);
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width: 900px){
-    .home{
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .home-img{
-        width: 30rem;    
-        height: 30rem;
-    }
-
-    /* Social icons and CV button responsive */
-    .social-icons a{
-        width: 3.8rem;
-        height: 3.8rem;
-        font-size: 1.7rem;
-    }
-
-    .dl-cv{
-        padding: 1rem 2.8rem;
-        font-size: 1.5rem;
-    }
-}
-
-@media(max-width: 500px){
-    .social-icons a{
-        width: 3.2rem;
-        height: 3.2rem;
-        font-size: 1.5rem;
-    }
-
-    .dl-cv{
-        padding: 0.9rem 2.2rem;
-        font-size: 1.4rem;
-    }
 }
 
 /* ================= SKILLS ================= */
