@@ -15,6 +15,129 @@ body{
     color: #EDEDED;
 }
 
+/* ================= GLOBAL MOBILE FIXES ================= */
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
+/* Make text scale better on very small screens */
+@media (max-width: 600px) {
+    html {
+        font-size: 56%;
+    }
+}
+
+/* ================= HEADER ================= */
+@media (max-width: 500px) {
+    header {
+        padding: 1.4rem 6%;
+    }
+
+    .logo {
+        font-size: 2.4rem;
+    }
+}
+
+/* ================= SECTION SPACING ================= */
+@media (max-width: 768px) {
+    section {
+        padding: 9rem 6% 4rem;
+    }
+}
+
+/* ================= HOME SECTION ================= */
+@media (max-width: 900px) {
+    .home {
+        gap: 4rem;
+    }
+
+    .home-content h1 {
+        font-size: 4.6rem;
+    }
+
+    .typing-text {
+        font-size: 2.6rem;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .home-content h1 {
+        font-size: 3.8rem;
+    }
+
+    .typing-text {
+        font-size: 2.2rem;
+    }
+
+    .typing-text span::after {
+        right: -6px;
+    }
+}
+
+/* ================= PROFILE IMAGE ================= */
+@media (max-width: 768px) {
+    .home-img {
+        width: 26rem;
+        height: 26rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .home-img {
+        width: 22rem;
+        height: 22rem;
+    }
+}
+
+/* ================= SOCIAL + BUTTON ================= */
+@media (max-width: 420px) {
+    .social-icons {
+        gap: 1.2rem;
+    }
+
+    .dl-cv {
+        width: 100%;
+        max-width: 24rem;
+        text-align: center;
+    }
+}
+
+/* ================= SKILLS ================= */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 3.6rem;
+        margin-bottom: 4rem;
+    }
+
+    .skills-container {
+        gap: 2.6rem;
+    }
+
+    .skill-card {
+        padding: 2.4rem;
+    }
+
+    .skill-card h3 {
+        font-size: 2.1rem;
+    }
+
+    .skill-card ul li {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ================= HEADER ================= */
 header{
@@ -863,7 +986,6 @@ span{
 }
 
 /* ===== PROJECT MODAL ===== */
-/* ===== PROJECT MODAL ===== */
 .project-modal {
     position: fixed;
     inset: 0;
@@ -965,6 +1087,82 @@ span{
     color: #6B91AE;
 }
 
+/* ================= PROJECT MODAL RESPONSIVE FIX ================= */
+
+/* Prevent background scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Tablet + Mobile */
+@media (max-width: 768px) {
+    .project-modal {
+        padding: 1.6rem;
+        align-items: flex-end; /* feels more natural on mobile */
+    }
+
+    .project-modal-content {
+        padding: 2.2rem;
+        max-height: 92vh;
+        border-radius: 2rem 2rem 0 0; /* bottom-sheet vibe */
+        animation: slideUp 0.35s ease;
+    }
+
+    .close-modal {
+        top: 1.4rem;
+        right: 1.6rem;
+        font-size: 3rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+    .project-modal {
+        padding: 0;
+    }
+
+    .project-modal-content {
+        padding: 1.8rem;
+        border-radius: 1.8rem 1.8rem 0 0;
+        max-height: 94vh;
+    }
+
+    .project-full h2 {
+        font-size: 2.6rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.9rem;
+    }
+
+    .project-content p,
+    .project-content li {
+        font-size: 1.4rem;
+    }
+
+    .close-modal {
+        font-size: 2.6rem;
+    }
+}
+
+/* Extra tiny devices (iPhone SE etc.) */
+@media (max-height: 640px) {
+    .project-modal-content {
+        max-height: 96vh;
+    }
+}
+
+/* Mobile animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 
 /* ================= SEMINARS & CERTIFICATIONS ================= */
@@ -1204,4 +1402,155 @@ span{
     .footer-socials a{
         font-size: 1.8rem;
     }
+}
+
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 3.4rem;
+        margin-bottom: 4rem;
+    }
+
+    .skills-container {
+        gap: 2.4rem;
+    }
+
+    .skill-card {
+        padding: 2.4rem;
+    }
+
+    .skill-card h3 {
+        font-size: 2.1rem;
+    }
+
+    .skill-card ul li {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        border-radius: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .tech-item {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .tech-item i {
+        font-size: 2.4rem;
+    }
+
+    .tech-item span {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .tech-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-item small {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .education {
+        padding: 5rem 6%;
+    }
+
+    .education-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card {
+        padding: 2rem;
+    }
+
+    .edu-header h3 {
+        font-size: 1.7rem;
+    }
+
+    .edu-desc {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-category {
+        padding: 2.6rem 2.2rem;
+        max-width: 100%;
+    }
+
+    .category-title {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-slider {
+        max-width: 100%;
+    }
+
+    .project-card {
+        padding: 2.2rem;
+        border-radius: 1.6rem;
+    }
+
+    .project-info h4 {
+        font-size: 1.8rem;
+    }
+
+    .project-info .desc {
+        font-size: 1.4rem;
+    }
+
+    .nav-btn {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .nav-btn {
+        padding: 0.6rem;
+    }
+
+    .project-info .tech {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-full h2 {
+        font-size: 2.8rem;
+    }
+
+    .project-content p,
+    .project-content li {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .project-gallery-slider.portrait .gallery-group {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-btn {
+        font-size: 2.6rem;
+    }
+
+    .gallery-btn.prev { left: -2.5rem; }
+    .gallery-btn.next { right: -2.5rem; }
 }
