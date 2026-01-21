@@ -1,56 +1,121 @@
-*{
+/* ================= RESET & BASE ================= */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-html{
-    font-size: 62.5%;
+html {
+    font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: rgb(3, 3, 24);
     color: #EDEDED;
+    overflow-x: hidden; /* prevent horizontal scroll */
 }
 
-/* ================= GLOBAL MOBILE FIXES ================= */
-
-/* Prevent horizontal scrolling */
-body {
-    overflow-x: hidden;
+/* ================= GENERAL SECTION SPACING ================= */
+section {
+    padding: 10rem 8% 5rem;
 }
-
-/* Make text scale better on very small screens */
-@media (max-width: 600px) {
-    html {
-        font-size: 56%;
-    }
-}
-
-
 
 /* ================= HEADER ================= */
-@media (max-width: 500px) {
-    header {
-        padding: 1.4rem 6%;
-    }
-
-    .logo {
-        font-size: 2.4rem;
-    }
+header {
+    padding: 2rem 8%;
 }
 
-/* ================= SECTION SPACING ================= */
-@media (max-width: 768px) {
-    section {
-        padding: 9rem 6% 4rem;
-    }
+.logo {
+    font-size: 2.8rem;
+    font-weight: 600;
 }
 
 /* ================= HOME SECTION ================= */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+}
+
+.home-content h1 {
+    font-size: 5.2rem;
+    line-height: 1.2;
+}
+
+.typing-text {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.home-content p {
+    font-size: 1.7rem;
+    max-width: 55rem;
+}
+
+/* ================= PROFILE IMAGE ================= */
+.home-img {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* ================= SOCIAL ICONS & BUTTON ================= */
+.social-icons {
+    display: flex;
+    gap: 1.6rem;
+    margin-bottom: 2.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dl-cv {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    font-size: 1.6rem;
+}
+
+/* ================= SKILLS ================= */
+.section-title {
+    font-size: 4.2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 3rem;
+}
+
+.skill-card {
+    padding: 3rem;
+}
+
+.skill-card h3 {
+    font-size: 2.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.skill-card ul li {
+    font-size: 1.7rem;
+    line-height: 1.6;
+}
+
+/* ================= TABLET BREAKPOINT ================= */
 @media (max-width: 900px) {
+    html {
+        font-size: 58%;
+    }
+
+    section {
+        padding: 9rem 6% 4rem;
+    }
+
     .home {
         gap: 4rem;
     }
@@ -62,81 +127,63 @@ body {
     .typing-text {
         font-size: 2.6rem;
     }
+}
+
+/* ================= MOBILE BREAKPOINT ================= */
+@media (max-width: 600px) {
+    html {
+        font-size: 56%;
+    }
+
+    header {
+        padding: 1.6rem 6%;
+    }
+
+    .logo {
+        font-size: 2.4rem;
+    }
+
+    .home {
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 3.4rem;
+    }
+
+    .typing-text {
+        font-size: 2.2rem;
+    }
 
     .home-content p {
         font-size: 1.6rem;
     }
-}
 
-@media (max-width: 500px) {
-    .home-content h1 {
-        font-size: 3rem;
-    }
-
-    .typing-text {
-        font-size: 2rem;
-    }
-
-    .typing-text span::after {
-        right: -4px;
-    }
-}
-
-/* ================= PROFILE IMAGE ================= */
-@media (max-width: 768px) {
     .home-img {
-        width: 26rem;
-        height: 26rem;
+        width: 24rem;
+        height: 24rem;
+    }
+
+    .dl-cv {
+        width: 100%;
+        max-width: 26rem;
+        text-align: center;
     }
 }
 
+/* ================= SMALL MOBILE ================= */
 @media (max-width: 420px) {
     .home-img {
         width: 22rem;
         height: 22rem;
     }
-}
 
-/* ================= SOCIAL + BUTTON ================= */
-@media (max-width: 420px) {
     .social-icons {
         gap: 1.2rem;
     }
 
-    .dl-cv {
-        width: 100%;
-        max-width: 24rem;
-        text-align: center;
-    }
-}
-
-/* ================= SKILLS ================= */
-@media (max-width: 768px) {
     .section-title {
-        font-size: 3.6rem;
-        margin-bottom: 4rem;
-    }
-
-    .skills-container {
-        gap: 2.6rem;
-    }
-
-    .skill-card {
-        padding: 2.4rem;
-    }
-
-    .skill-card h3 {
-        font-size: 2.1rem;
-    }
-
-    .skill-card ul li {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 420px) {
-    .skills-container {
-        grid-template-columns: 1fr;
+        font-size: 3.4rem;
     }
 }
 
