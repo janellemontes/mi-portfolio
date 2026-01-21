@@ -15,84 +15,6 @@ body{
     color: #EDEDED;
 }
 
-/* ================= MOBILE HOME FIX ================= */
-@media (max-width: 768px) {
-
-    .home {
-        min-height: 100vh;
-        padding: 10rem 6% 4rem;
-        gap: 3.5rem;
-    }
-
-    .home-content {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    /* Fix large heading */
-    .home-content h1 {
-        font-size: 3.4rem;
-        line-height: 1.25;
-    }
-
-    /* Fix typing overflow issue */
-    .typing-text {
-        font-size: 2.2rem;
-        white-space: normal;   /* ✅ IMPORTANT FIX */
-        overflow: visible;
-    }
-
-    .typing-text span::after {
-        right: -6px;
-        height: 2.2rem;
-    }
-
-    /* Improve paragraph readability */
-    .home-content p {
-        font-size: 1.55rem;
-        line-height: 1.7;
-        padding: 0 0.5rem;
-    }
-
-    /* Profile image scaling */
-    .home-img {
-        width: 26rem;
-        height: 26rem;
-    }
-
-    /* Social + CV spacing */
-    .social-cv {
-        margin-top: 2.2rem;
-        gap: 2rem;
-    }
-}
-
-/* ================= EXTRA SMALL DEVICES ================= */
-@media (max-width: 420px) {
-
-    .home-content h1 {
-        font-size: 3rem;
-    }
-
-    .typing-text {
-        font-size: 2rem;
-    }
-
-    .home-img {
-        width: 22rem;
-        height: 22rem;
-    }
-
-    .social-icons {
-        gap: 1.2rem;
-    }
-
-    .dl-cv {
-        width: 100%;
-        max-width: 22rem;
-        text-align: center;
-    }
-}
 
 
 /* ================= HEADER ================= */
@@ -407,6 +329,130 @@ span{
         font-size: 1.4rem;
     }
 }
+
+/* ================= GLOBAL MOBILE FIXES ================= */
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
+/* Make text scale better on very small screens */
+@media (max-width: 600px) {
+    html {
+        font-size: 56%;
+    }
+}
+
+/* ================= HEADER ================= */
+@media (max-width: 500px) {
+    header {
+        padding: 1.4rem 6%;
+    }
+
+    .logo {
+        font-size: 2.4rem;
+    }
+}
+
+/* ================= SECTION SPACING ================= */
+@media (max-width: 768px) {
+    section {
+        padding: 9rem 6% 4rem;
+    }
+}
+
+/* ================= HOME SECTION ================= */
+@media (max-width: 900px) {
+    .home {
+        gap: 4rem;
+    }
+
+    .home-content h1 {
+        font-size: 4.6rem;
+    }
+
+    .typing-text {
+        font-size: 2.6rem;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .home-content h1 {
+        font-size: 3.8rem;
+    }
+
+    .typing-text {
+        font-size: 2.2rem;
+    }
+
+    .typing-text span::after {
+        right: -6px;
+    }
+}
+
+/* ================= PROFILE IMAGE ================= */
+@media (max-width: 768px) {
+    .home-img {
+        width: 26rem;
+        height: 26rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .home-img {
+        width: 22rem;
+        height: 22rem;
+    }
+}
+
+/* ================= SOCIAL + BUTTON ================= */
+@media (max-width: 420px) {
+    .social-icons {
+        gap: 1.2rem;
+    }
+
+    .dl-cv {
+        width: 100%;
+        max-width: 24rem;
+        text-align: center;
+    }
+}
+
+/* ================= SKILLS ================= */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 3.6rem;
+        margin-bottom: 4rem;
+    }
+
+    .skills-container {
+        gap: 2.6rem;
+    }
+
+    .skill-card {
+        padding: 2.4rem;
+    }
+
+    .skill-card h3 {
+        font-size: 2.1rem;
+    }
+
+    .skill-card ul li {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ================= SKILLS ================= */
 .skills{
